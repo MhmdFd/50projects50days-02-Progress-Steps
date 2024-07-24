@@ -1,0 +1,95 @@
+:root {
+    --line-fill: #3498db;
+    --line-empty: #e0e0e0;
+}
+*{
+    overflow: hidden;
+    font-size: 1.1em;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+body{
+    background-color: #efefef;
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+}
+.container{
+    display :flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    height:100vh ;
+    /* background-color: #3498db; */
+    /* grid-template: 40% 35px 30px 33px 10% / 1fr 50px 50px 87px 20px 87px 50px 50px 1fr; */
+}
+.steps{
+    /* background-color: grey; */
+    /* grid-area: 2/ 2 / 3 / 9; */
+    display: flex;
+    justify-content: space-around;
+}
+.line{
+    width:400px ;
+    /* height: 4px; */
+    background-color: var(--line-empty);
+    position: absolute;
+    top:50% ;
+    /* left: 0; */
+    z-index: -1;
+    border: 2px solid var(--line-empty);
+    transform: translateY(-50%);
+    transition: 0.4s ease-in;
+    animation: line 0.5s ;
+    border-color: linear-gradient(90deg, red, blue);
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+/* .step::before {
+    content: '';
+    background-color: var(--line-fill);
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: 4px;
+    width: 100%;
+    z-index: -1;
+  } */
+.circle{
+    width: 40px;
+    height: 40px;
+    margin:50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    border: solid 4px var(--line-empty);
+    background-color: #fff;
+    transition: 0.2s ease-in;
+}
+.btn{
+    color: #efefef;
+    border: none;
+    border-radius: 5px;
+    margin: 30px 10px;
+    width: 135px;
+    height: 50px;
+    background-color: var(--line-fill);
+    cursor: pointer;
+}
+.btn-container{
+    position: absolute;
+    top: 55%;
+}
+.active{
+    border-color: #3498db;
+}
+.btn:disabled{
+    background-color: var(--line-empty);
+    cursor: default;
+}
